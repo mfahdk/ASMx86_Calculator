@@ -50,7 +50,34 @@ The `Calculator.asm` file is an assembly language program for a simple calculato
 #### Data Section (`section .data`):
 - Contains predefined messages used throughout the program for prompts and results.
 
+
 #### BSS Section (`section .bss`):
 - Defines uninitialized variables for storing user input, the remainder of division, and the operation counter.
 
 This program demonstrates the use of basic assembly language constructs such as loops, conditional statements, function calls, and handling user input/output. It also includes error handling and ensures the user cannot perform invalid operations like division by zero.
+
+This program demonstrates the use of basic assembly language constructs such as loops, conditional statements, function calls, and handling user input/output. It also includes error handling and ensures the user cannot perform invalid operations like division by zero.
+
+### Necessary Steps to Run the Program
+
+#### Installation
+```bash
+sudo apt install gcc-multilib g++-multilib
+```
+
+#### Assembling
+```bash
+nasm -f elf32 -o file.o file.asm
+```
+
+#### Linking
+```bash
+gcc -m32 -nostartfiles -no-pie -o file file.o
+```
+
+#### Execution
+```bash
+./file
+```
+
+These steps will compile and run the `Calculator.asm` program on a system with the necessary tools installed.
